@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="StatusMenuManager" customModule="Trojan" customModuleProvider="target">
+            <connections>
+                <outlet property="aclAutoItem" destination="NEA-Fa-rON" id="znc-Er-JoQ"/>
+                <outlet property="aclModeItem" destination="b2z-2C-t82" id="43m-jx-cIg"/>
+                <outlet property="backChinaItem" destination="x6U-Ur-hKu" id="dLv-0t-UVH"/>
+                <outlet property="copyCommandItem" destination="Bea-Hp-fhg" id="Wd9-DE-io5"/>
+                <outlet property="fixedWidth" destination="qJU-bB-Y5c" id="Wf0-vF-cHr"/>
+                <outlet property="globalItem" destination="fvC-5Z-4w5" id="bI6-44-rQq"/>
+                <outlet property="manualItem" destination="REy-hH-h4P" id="W1g-kW-nEy"/>
+                <outlet property="pacItem" destination="gh3-ld-apY" id="urJ-A1-Exy"/>
+                <outlet property="serversMenuItem" destination="Eur-eP-1FK" id="VfC-ha-YCB"/>
+                <outlet property="speedMenu" destination="Vcg-d5-cVm" id="8zc-dM-HJT"/>
+                <outlet property="statusMenu" destination="zOa-kh-Dxd" id="bl4-yd-acl"/>
+                <outlet property="switchLabel" destination="VPI-fv-1dZ" id="g05-Oh-nWv"/>
+                <outlet property="toggleRunning" destination="SL2-0h-OFw" id="xvB-nv-B6M"/>
+                <outlet property="whiteListItem" destination="czN-6H-Giu" id="HLh-dO-QfK"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu id="zOa-kh-Dxd">
+            <items>
+                <menuItem title="Trojan: On" enabled="NO" id="VPI-fv-1dZ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Turn Trojan On" id="SL2-0h-OFw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="powerSwitch:" target="Voe-Tx-rLC" id="dno-zg-HD9"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="Pei-ry-g4V"/>
+                <menuItem title="Auto Mode Base On PAC" id="gh3-ld-apY">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="pacMode:" target="Voe-Tx-rLC" id="p0P-Ad-iII"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="White List Mode" id="czN-6H-Giu">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="WhiteListMode:" target="Voe-Tx-rLC" id="HaZ-qW-ZfZ"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Global Mode" id="fvC-5Z-4w5">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="globalMode:" target="Voe-Tx-rLC" id="lR2-Pc-i0C"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Manual Mode" id="REy-hH-h4P">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="manualMode:" target="Voe-Tx-rLC" id="vhp-nc-akk"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="ACL Mode" id="b2z-2C-t82">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" id="cxH-YN-kkP">
+                        <items>
+                            <menuItem title="ACL Auto" id="NEA-Fa-rON">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="aclAutoMode:" target="Voe-Tx-rLC" id="xmY-Dq-1sW"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Proxy Back China" id="x6U-Ur-hKu">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="backChinaMode:" target="Voe-Tx-rLC" id="57F-8X-7wQ"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="rjv-DD-Ohy"/>
+                <menuItem title="Servers" id="Eur-eP-1FK">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" id="llM-VQ-Alj"/>
+                </menuItem>
+                <menuItem title="Subscribers" id="KTm-qa-dNf">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Subscribers" id="bHi-SW-RAb">
+                        <items>
+                            <menuItem title="⚙ Edit Subscribe Feed" id="ags-VN-M7s">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="editSubscribeFeedTao:" target="Voe-Tx-rLC" id="OEd-XV-bmz"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="q6i-xD-e3f"/>
+                            <menuItem title="Update Subscription With Proxy" id="hEu-gf-24N">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="updateSubscribeWithProxy:" target="Voe-Tx-rLC" id="7Wc-GC-ZV2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Update Subscription Without Proxy" id="Gga-2f-cc5">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="updateSubscribeWithoutProxy:" target="Voe-Tx-rLC" id="jQb-AS-yqk"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="iio-Qk-cXd"/>
+                <menuItem title="⚙ Servers Setting" id="nGS-Ow-TSH">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="serversSetting:" target="Voe-Tx-rLC" id="gH9-Ln-nTS"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Test Connection Delay" id="CpR-44-ZNN">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="testConnectionDelay:" target="Voe-Tx-rLC" id="M3b-dM-dsj"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Export Command Line To Pasteboard" id="Bea-Hp-fhg">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="copySocks5CommandLineTap:" target="Voe-Tx-rLC" id="viH-pH-NQ5"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="veu-Pn-4Fw"/>
+                <menuItem title="⚙ Settings" id="nzW-Ph-yuS">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="settingsTap:" target="Voe-Tx-rLC" id="VRZ-YS-cdc"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Help" id="i2H-13-hlp">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" id="5oV-2d-kcy">
+                        <items>
+                            <menuItem title="⚙ View Logs" id="p8A-3V-2aa">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showLog:" target="Voe-Tx-rLC" id="nAf-hi-tBM"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Clean Logs" id="0PN-XY-ZXt">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="cleanLogs:" target="Voe-Tx-rLC" id="XaB-bT-KhQ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="MK3-bi-tP6"/>
+                            <menuItem title="Check Update" id="BLJ-op-AkG">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkUpdate:" target="Voe-Tx-rLC" id="Jfp-xf-gTf"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Feedback" id="nHU-cq-FkI">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="feedbackTap:" target="Voe-Tx-rLC" id="ytI-YZ-9hj"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="About" id="YkQ-MK-047">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="aboutMe:" target="Voe-Tx-rLC" id="dyE-It-Phn"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="c1r-Sm-ft0"/>
+                <menuItem title="Quit" id="9WC-iB-Jq8">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quit:" target="Voe-Tx-rLC" id="x8m-8e-VZB"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="139" y="152"/>
+        </menu>
+        <menu id="Vcg-d5-cVm" userLabel="SpeedMenu">
+            <items>
+                <menuItem title="Fixed Width" id="qJU-bB-Y5c">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="fixedWidth:" target="Voe-Tx-rLC" id="p3s-Pp-BNj"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="3b8-0d-uUl"/>
+                <menuItem title="Close" id="mwK-zU-e1F">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="closeSpeedItem:" target="Voe-Tx-rLC" id="i1r-5B-4OR"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-220" y="17"/>
+        </menu>
+    </objects>
+</document>
